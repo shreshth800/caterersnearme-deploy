@@ -22,9 +22,7 @@ This clone only leverages HTML5 and CSS, and is devoid of any JS functionality t
 
 Further I have used Vite for the project's initialization due to it's seemless adoption of PostCSS which allows for a smooth developer experience & me not having to worry about adding WebKit prefixes to the CSS styles for different browser's compatibility. 
 
-## Getting Started
-
-So how do you get this template to work for your project? It is easier than you think.
+## Getting Started - 
 
 
 ### Install
