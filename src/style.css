@@ -46,11 +46,32 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: background-color var(--transition-duration);
   color: white;
   font-weight: bold;
   font-size: small;
   text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.button::before {
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  background-color: var(--grey);
+  transform: scaleX(0);
+  transform-origin: 0;
+  transition: transform var(--transition-duration);
+  z-index: -1;
+  border-radius: 70px;
+}
+
+.button:hover::before {
+  transform: scaleX(1);
 }
 
 .nav-buttons {
