@@ -331,10 +331,33 @@ body {
   align-items: center;
   justify-content: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding-left: 7px;
+
   cursor: pointer;
   position: absolute;
   z-index: 1;
+}
+
+.player-button::before {
+  content: "";
+  height: 100px;
+  width: 100px;
+  background-color: var(--backColor);
+  border-radius: 100%;
+  position: absolute;
+  z-index: -1;
+  opacity: 0.5;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
 }
 
 .player-icon {
@@ -385,4 +408,152 @@ body {
   grid-column-end: 4;
   grid-row-start: 1;
   grid-row-end: 7;
+}
+
+@media (max-width: 968px) {
+  .player-section {
+    width: 100%;
+    height: auto;
+    background-color: var(--backColor);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .player {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 0;
+  }
+
+  .data-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    gap: 20px;
+    padding: 10px;
+    width: 100%;
+    height: 50vh;
+  }
+}
+
+@media (max-width: 500px) {
+  .data-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+  }
+  .data-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.form-container {
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--backColor);
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  gap: 20px;
+  position: relative;
+}
+.form-container form {
+  display: grid;
+  gap: 20px;
+  z-index: 1;
+}
+.form-container input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.form-container p {
+  color: var(--red);
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 0;
+}
+
+.form-container h1 {
+  color: var(--textColor);
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.form-container h1::first-letter {
+  color: var(--red);
+}
+
+.form-container::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 10px;
+  background-image: url(/Squigle.png);
+  background-position: center;
+  background-repeat: repeat-y;
+  height: 100%;
+  z-index: 1000;
+}
+
+.form-container::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 10px;
+  background-image: url(/Squigle2.png);
+  background-position: center;
+  background-repeat: repeat-y;
+  height: 100%;
+  z-index: 1000;
+}
+
+@media (min-width: 700px) {
+  .form-container {
+    width: 900px;
+  }
+  .form-container form {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1000px) {
+  .form-container {
+    width: 900px;
+  }
+  .form-container form {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
