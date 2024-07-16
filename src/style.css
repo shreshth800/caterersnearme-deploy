@@ -812,10 +812,11 @@ body {
   justify-content: center;
   align-items: center;
   padding: 10px;
+  margin-top: 40px;
 }
 
 .chef-card {
-  border: 1px solid #ccc;
+  background-color: var(--backColor);
   border-radius: 8px;
   padding: 20px;
   display: flex;
@@ -880,4 +881,55 @@ body {
   height: 10px;
   border-radius: 10px;
   cursor: pointer;
+}
+
+.customer-reviews-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: var(--backColor);
+}
+
+.review-card {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: auto;
+  border: #ccc solid 1px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.customer-reviews-p {
+  font-weight: bold;
+  color: var(--red);
+}
+
+.review-card-person {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  align-self: flex-start;
+  gap: 20px;
+}
+
+.review-card-img {
+  width: 70px;
+  height: 75px;
+  border: #ddd solid 1px;
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.customer-reviews-h1 {
+  color: var(--grey);
+  font-size: xx-large;
+}
+
+.customer-reviews-h1::first-letter {
+  color: var(--red);
 }
